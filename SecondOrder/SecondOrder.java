@@ -16,8 +16,6 @@ public class SecondOrder{
         }
         s.close();
 
-        System.out.println(Arrays.toString(nums));
-
         double s1 = nums[0];
         double s2 = nums[1];
         //Our formula is t^2 - c1t - c2 = 0 so we multiply by -1
@@ -29,15 +27,22 @@ public class SecondOrder{
         roots = findRoot(c1, c2);
         double r1 = roots[0];
         double r2 = roots[1];
-        System.out.println("Roots: " + r1 + " " + r2);
+        System.out.println("\nr1 = " + r1 + "\nr2 = " + r2);
 
         //Finding p
         double p = (s2 - s1*r2)/(r1 - r2);
-        System.out.println("P: " + p);
+        System.out.println("p = " + p);
 
         //Finding q
         double q = s1 - p;
-        System.out.println("Q: " + q);
+        System.out.println("q = " + q);
+
+        System.out.printf("S(1) =  %.1f \nS(2) = %.1f\n", s1, s2);
+        //Calculating S(n)
+        for(int i = 3; i <= 10; i++){
+            double total = p * Math.pow(r1, i - 1) + q * Math.pow(r2, i -1);
+            System.out.println("S(" + i + ") = " + total); 
+        }
     
 
     }
