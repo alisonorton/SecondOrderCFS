@@ -24,14 +24,20 @@ public class SecondOrder{
         double c1 = nums[2]*(-1);
         double c2  = nums[3]*(-1);
         double roots[] = new double[2];
-        double r1;
-        double r2;
 
         //Find the roots
         roots = findRoot(c1, c2);
-        r1 = roots[0];
-        r2 = roots[1];
+        double r1 = roots[0];
+        double r2 = roots[1];
         System.out.println("Roots: " + r1 + " " + r2);
+
+        //Finding p
+        double p = (s2 - s1*r2)/(r1 - r2);
+        System.out.println("P: " + p);
+
+        //Finding q
+        double q = s1 - p;
+        System.out.println("Q: " + q);
     
 
     }
@@ -51,7 +57,7 @@ public class SecondOrder{
         double determinant = b * b - 4 * a * c;
 
         // check if determinant is greater than 0
-    if (determinant > 0) {
+        if (determinant > 0) {
 
         // two real and distinct roots
         root1 = (-b + Math.sqrt(determinant)) / (2 * a);
@@ -59,7 +65,7 @@ public class SecondOrder{
       }
 
       // check if determinant is equal to 0
-    else if (determinant == 0) {
+      else if (determinant == 0) {
 
         // two real and equal roots
         // determinant is equal to 0
@@ -68,7 +74,7 @@ public class SecondOrder{
       }
 
       // if determinant is less than zero
-    else {
+      else {
         // roots are complex number and distinct
       double real = -b / (2 * a);
       double imaginary = Math.sqrt(-determinant) / (2 * a);
@@ -81,4 +87,5 @@ public class SecondOrder{
       return roots;
             
     }
+
 }
