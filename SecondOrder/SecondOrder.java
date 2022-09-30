@@ -48,9 +48,9 @@ public class SecondOrder{
         System.out.println("q = " + q);
 
         //Display the eqation
-        
+        System.out.println("S(n) = (" + p +")(" + r1 + ")^(n - 1) + (" + q + ")(" + r2 + ")^(n - 1)");
 
-        System.out.printf("S(1) =  %.1f \nS(2) = %.1f\n", s1, s2);
+        System.out.printf("S(1) = %.1f \nS(2) = %.1f\n", s1, s2);
         //Calculating S(n)
         for(int i = 3; i <= 10; i++){
             double total = p * Math.pow(r1, i - 1) + q * Math.pow(r2, i -1);
